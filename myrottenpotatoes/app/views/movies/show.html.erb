@@ -13,4 +13,5 @@
 </div>
 
 <%= link_to 'Edit this movie', edit_movie_path(@movie), :class => 'btn' %>
+<%= link_to 'Add Review', new_movie_review_path(@movie.id), :class => 'btn' %>
 <%= link_to 'Back to movie list', movies_path, :class => 'btn btn-primary' %>

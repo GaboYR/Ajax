@@ -7,12 +7,13 @@
     <%= csrf_meta_tags %>
   </head>
   <body>
-    <div class="container">
-      <%- if flash[:notice] %>
-      <div class="row<%= (' adult' unless movie.rating =~ /^G|PG$/) %>">
-      <%- elsif flash[:alert] %>
-      <div class="alert alert-danger text-center"><%=flash[:alert]%></div>
-      <% end %>
+  <div class="container">
+    <% if @movie %>
+      <div class="row<%= (' adult' unless @movie.rating =~ /^G|PG$/) %>">
+    <% elsif flash[:alert] %>
+      </div>
+      <div class="alert alert-danger text-center"><%= flash[:alert] %></div>
+    <% end %>
       <%= yield %>
     </div>
   </body>
